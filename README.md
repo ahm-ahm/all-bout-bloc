@@ -18,5 +18,6 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-# Shimmer
+# Shimmer and API call
 ![Screenshot](images/shimmer.png)
+
