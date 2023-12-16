@@ -1,10 +1,10 @@
 import 'package:bloc_text_feild/custom_text_feild.dart';
-import 'package:bloc_text_feild/my_table.dart';
-import 'package:bloc_text_feild/vertical-side-bar/vertical_side_bar.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'Screens/Home-screen/data-bloc/data_bloc.dart';
+import 'Screens/Home-screen/view/home_screen.dart';
 import 'custom-drop-down/custom_drop_down.dart';
 import 'custom-side-bar/custom_side_bar.dart';
 
@@ -32,13 +32,15 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (BuildContext context) => SideBloc(),
           ),
+          BlocProvider(
+            create: (BuildContext context) => TodoBloc(),
+          ),
+          BlocProvider(
+            create: (_) => DropDownBloc(),
+          ),
         ],
         // child: const MyHomePage(title: 'Flutter Demo Home Page'),
-        child: BlocProvider(
-          create: (_) => DropDownBloc(),
-          // child: CustomDropdown(),
-          child: CustomSideBar(),
-        ),
+        child: HomeScreen(),
       ),
     );
   }
